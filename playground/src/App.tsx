@@ -14,7 +14,7 @@ const DEFAULT_VALUES = {
 
 const App: React.FC = () => {
   // prettier-ignore
-  const FAKE_LIST = ['foo','bar','baz','foo','foo','bar','baz','foo','foo','bar','baz','foo','foo','bar','baz'];
+  const FAKE_LIST = ['foo', 'bar', 'baz', 'foo', 'foo', 'bar', 'baz', 'foo', 'foo', 'bar', 'baz', 'foo', 'foo', 'bar', 'baz'];
   const [list, setList] = useState<string[]>(FAKE_LIST);
   const [isPullable, setIsPullable] = useState<boolean>(DEFAULT_VALUES.isPullable);
   const [canFetchMore, setCanFetchMore] = useState<boolean>(DEFAULT_VALUES.canFetchMore);
@@ -77,6 +77,16 @@ const App: React.FC = () => {
               <h2>Pull To Refresh</h2>
             </header>
             <div className="App-container">
+              <h4>Horizontal list of items</h4>
+              <ul style={{ display: 'flex', overflowX: 'scroll' }}>
+                {list.map((item: string, index: number) => (
+                  <li key={index} style={{ flex: '0 0 100px' }}>
+                    {index + 1} - {item}
+                  </li>
+                ))}
+              </ul>
+
+              <h4>Vertical list of items</h4>
               <ul>
                 {list.map((item: string, index: number) => (
                   <li key={index}>
