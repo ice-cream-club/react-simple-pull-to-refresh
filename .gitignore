@@ -2,7 +2,7 @@
 /node_modules
 
 # production
-/build
+# /build
 
 # misc
 .DS_Store
@@ -14,5 +14,5 @@ yarn-debug.log*
 yarn-error.log*
 
 #rollup
-/build
+# /build
 .env
